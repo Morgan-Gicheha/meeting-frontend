@@ -1,0 +1,49 @@
+<style>
+  .me:hover{
+    background-color: whitesmoke;
+
+  }
+  h1{
+    text-align: center;
+  }
+</style>
+<div class="" style="display: flex; justify-content: center;  width: 100%;padding-top: 2em;">
+  
+  <button class="me" style="padding-left: 2.5em;padding-right: 2.5em;padding-top: 1em; padding-bottom: 1em;"  mat-raised-button color="accent" (click)="openDialog()">Create a Meeting</button>
+</div>
+
+<h1   >  meetings</h1>
+<table mat-table [dataSource]="meetings$" class="mat-elevation-z8 demo-table">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>.</th>
+      <td mat-cell *matCellDef="let meeting"> {{meeting.id}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="meeting_title">
+      <th mat-header-cell *matHeaderCellDef> Meeting Title </th>
+      <td mat-cell *matCellDef="let meeting"> {{meeting.meeting_title}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="time_posted">
+      <th mat-header-cell *matHeaderCellDef> Time Posted </th>
+      <td mat-cell *matCellDef="let meeting"> {{meeting.time_posted}} </td>
+
+    </ng-container>   
+     <ng-container matColumnDef="file_url">
+      <th mat-header-cell *matHeaderCellDef> Attached Files </th>
+      <td mat-cell *matCellDef="let meeting"> <a href="https://res.cloudinary.com/gicheworks/image/upload/v1651585524/GMorgan.jpg">{{meeting.file_url}}</a> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Record Meeting</th>
+        <td mat-cell *matCellDef="let meeting">  <button  (click)="populate(meeting.id) "  routerLink="/minutes" mat-raised-button color="primary">Write Minutes</button>  </td>
+  
+      </ng-container>  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  

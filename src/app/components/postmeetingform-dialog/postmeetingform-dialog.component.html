@@ -1,0 +1,14 @@
+ 
+    <form id="contact" action="" [formGroup]="form" (ngSubmit)="submit()"  >
+      <h3>Create a meeting </h3>
+
+      <fieldset>
+        <input placeholder="Purpose of the meeting" formControlName="meeting_title" type="text" tabindex="1" required autofocus>
+      </fieldset>
+ 
+      <fieldset>
+        <button [disabled]="form.invalid"  [mat-dialog-close] name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+ 
+    </form>
+   

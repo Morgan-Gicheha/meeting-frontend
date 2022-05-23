@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background: blanchedalmond;
+  align-items: flex-start;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  }
+  form.example-form.ng-untouched.ng-pristine.ng-valid {
+    width: 80vw;
+    background: red;
+    height: 80vh;
+    display: contents;
+}
+mat-form-field.mat-form-field.example-full-width.ng-tns-c131-2.mat-primary.ng-star-inserted.mat-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-has-label.ng-untouched.ng-pristine.ng-valid {
+  width: 50%;
+  /* height: 9em; */
+}
